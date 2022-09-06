@@ -1,5 +1,5 @@
 class ContestantsController < ApplicationController
     def index
-        @contestants = Contestant.find(params[:id])
+        @contestants = Contestant.all
     end
 end

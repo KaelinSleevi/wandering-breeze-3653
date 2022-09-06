@@ -39,4 +39,4 @@ RSpec.describe Project do
         expect(page).to have_content(@erin.name)
         expect(page).to have_content(@boardfit.name)
     end
-
+end
