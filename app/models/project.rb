@@ -17,6 +17,6 @@ class Project < ApplicationRecord
       base += count_of_contestants
       average += contestant.years_of_experience
     end
-    new_average = average/base
+    new_average = (average.to_f/base)
   end
 end
