@@ -25,18 +25,23 @@ RSpec.describe Project do
         ContestantProject.create(contestant_id: @erin.id, project_id: @boardfit.id)
     end
 
-    it 'can list each contestant and the projects they are in' do
-        visit "/contestants"
+    it 'can display each projects name and materials' do
+        visit "/projects/#{@news_chic.id}"
 
-        expect(page).to have_content(@jay.name)
         expect(page).to have_content(@news_chic.name)
-        expect(page).to have_content(@gretchen.name)
         expect(page).to have_content(@news_chic.name)
-        expect(page).to have_content(@upholstery_tux.name)
-        expect(page).to have_content(@kentaro.name)
-        expect(page).to have_content(@upholstery_tux.name)
-        expect(page).to have_content(@boardfit.name)
-        expect(page).to have_content(@erin.name)
-        expect(page).to have_content(@boardfit.name)
+        expect(page).to have_content(@recycled_material_challenge.theme)
+    end
+
+    it 'can display the amount of contestants' do
+        visit "/projects/#{@news_chic.id}"
+
+        expect(page).to have_content("Amount of Contestants: 2")
+    end
+
+    it 'can display the average contestant experience' do
+        visit "/projects/#{@news_chic.id}"
+      
+        expect(page).to have_content("Average Contestant Experience: 12.5")
     end
 end

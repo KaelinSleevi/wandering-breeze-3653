@@ -1,8 +1,10 @@
 <h1>This Year's Contestants</h1>
 
 <% @contestants.each do |contestant| %>
-    <h3><%= contestant.name %></h3>
-    <p>Project Assigned: <% contestant.projects.each do |project|%>
-        <%= project.name %>
-    <% end %></p>
+    <div id="contestant_<%= contestant.id %>">
+        <h3><%= contestant.name %></h3>
+        <p>Project Assigned: <% contestant.projects.each do |project|%>
+            <%= project.name %>
+        <% end %></p>
+    </div>
 <% end %>
